@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>King Ezio and His Grand Adventure</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .game-container {
+      text-align: center;
+      width: 70%;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .choice {
+      padding: 10px;
+      margin: 15px 0;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+    .choice:hover {
+      transform: scale(1.1);
+    }
+    .green {
+      background-color: #00d100;
+      color: white;
+    }
+    .purple {
+      background-color: #8e44ad;
+      color: white;
+    }
+    .yellow {
+      background-color: #ffcc00;
+      color: white;
+    }
+    .red {
+      background-color: #ff4d4d;
+      color: white;
+    }
+    .blue {
+      background-color: #3498db;
+      color: white;
+    }
+    .bold-green {
+      font-weight: bold;
+      color: #28a745;
+    }
+    .bold-blue {
+      font-weight: bold;
+      color: #007bff;
+    }
+    .cloudy-text {
+      color: #b3b3b3;
+    }
+    .squished-brown {
+      color: #8B4513;
+    }
+    .angry-red {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1 id="story-title">King Ezio and His Grand Adventure</h1>
+    <p id="story-text">Ezio, the fluffy white Samoyed puppy, wakes up on the floor of his Mama and Papa's room. What should he do?</p>
+    <div id="choices-container">
+      <button class="choice green" onclick="wakeUpParents()">Wake up Mama and Papa by licking their faces</button>
+      <button class="choice purple" onclick="sneakOutside()">Sneak outside</button>
+    </div>
+  </div>
+
+  <script>
+    function resetGame() {
+      document.getElementById("story-title").innerHTML = "King Ezio and His Grand Adventure";
+      document.getElementById("story-text").innerHTML = "Ezio, the fluffy white Samoyed puppy, wakes up on the floor of his Mama and Papa's room. What should he do?";
+      document.getElementById("choices-container").innerHTML = `
+        <button class="choice green" onclick="wakeUpParents()">Wake up Mama and Papa by licking their faces</button>
+        <button class="choice purple" onclick="sneakOutside()">Sneak outside</button>
+      `;
+    }
+
+    function wakeUpParents() {
+      document.getElementById("story-text").innerHTML = "Ezio licks his Mama and Papa’s faces. They wake up and give him a big old hug. They then give him breakfast! What should Ezio do next?";
+      document.getElementById("choices-container").innerHTML = `
+        <button class="choice squished-brown" onclick="poopOnFloor()">Poop on the floor</button>
+        <button class="choice yellow" onclick="peeOnFloor()">Pee on the floor</button>
+      `;
+    }
+
+    function sneakOutside() {
+      document.getElementById("story-text").innerHTML = "Ezio sneaks outside and catches a ride on the back of a passing golf cart, undetected. The ride takes him to an interesting place. What should he do now?";
+      document.getElementById("choices-container").innerHTML = `
+        <button class="choice bold-green" onclick="goToPublix()">Jump off at Publix</button>
+        <button class="choice bold-blue" onclick="goToAldi()">Hop off at Aldi</button>
+      `;
+    }
+
+    function poopOnFloor() {
+      document.getElementById("story-text").innerHTML = "Mama and Papa lightly scold Ezio, but go about their day having fun, petting him, and watching TV. The adventure ends here!";
+      document.getElementById("choices-container").innerHTML = `
+        <button class="choice green" onclick="resetGame()">Replay</button>
+      `;
+    }
+
+    function peeOnFloor() {
+      document.getElementById("story-text").innerHTML = "Mama and Papa are very angry and disappointed in Ezio. Ezio bows his head and vows to repent. What should he do next?";
+      document.getElementById("choices-container").innerHTML = `
+        <button class="choice cloudy-text" onclick="talkToPapa()">Talk to Papa in dog speak</button>
+        <button class="choice angry-red" onclick="urinateAgain()">Urinate again</button>
+      `;
+    }
+
+    function talkToPapa() {
+      document.getElementById("story-text").innerHTML = "Ezio talks to Papa in dog speak, telling him he needs to go outside. Papa takes Ezio on a walk, and the adventure continues!";
+      document.getElementById("choices-container").innerHTML = '';
+    }
+
+    function urinateAgain() {
+      document.getElementById("story-text").innerHTML = "Papa and Mama comically facepalm, and the adventure ends here.";
+      document.getElementById("choices-container").innerHTML = `
+        <button class="choice green" onclick="resetGame()">Replay</button>
+      `;
+    }
+
+    function goToPublix() {
+      document.getElementById("story-text").innerHTML = "Ezio enters Publix and is crowned 'King Ezio of Sun City!' You win the game!";
+      document.getElementById("choices-container").innerHTML = `
+        <button class="choice green" onclick="resetGame()">Replay</button>
+      `;
+    }
+
+    function goToAldi() {
+      document.getElementById("story-text").innerHTML = "Ezio enters Aldi and is presented with two choices. What should he do?";
+      document.getElementById("choices-container").innerHTML = `
+        <button class="choice reddish-brown" onclick="getYummySnacks()">Get yummy meat sticks for Mama and Papa</button>
+        <button class="choice german-flag" onclick="runForChancellor()">Run for Chancellor in the German election</button>
+      `;
+    }
+
+    function getYummySnacks() {
+      document.getElementById("story-text").innerHTML = "Ezio grabs the yummy meat sticks for Mama and Papa and returns home. Mama and Papa hug and pet Ezio, thanking him for being such a good boy. You win the game!";
+      document.getElementById("choices-container").innerHTML = `
+        <button class="choice green" onclick="resetGame()">Replay</button>
+      `;
+    }
+
+    function runForChancellor() {
+      document.getElementById("story-text").innerHTML = "Ezio and his parents move to Germany and become the collective head of state! You win the game!";
+      document.getElementById("choices-container").innerHTML = `
+        <button class="choice green" onclick="resetGame()">Replay</button>
+      `;
+    }
+  </script>
+</body>
+</html>
